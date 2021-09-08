@@ -8,6 +8,7 @@ var data = {
 };
 
 function logSubmit(event) {
+  event.preventDefault();
   var newEntry = {
     title: document.querySelector('.title'),
     photoURL: document.querySelector('.photo'),
@@ -16,6 +17,7 @@ function logSubmit(event) {
   };
   data.nextEntryId++;
   data.entries.unshift(newEntry);
+  document.querySelector('form').reset();
 }
 
 var form = document.querySelector('.entry');
