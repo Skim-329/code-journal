@@ -6,3 +6,10 @@ var data = {
   editing: null,
   nextEntryId: 1
 };
+
+function logSubmit(event) {
+  event.preventDefault();
+}
+
+var form = document.querySelector('.notes');
+form.addEventListener('submit', logSubmit);

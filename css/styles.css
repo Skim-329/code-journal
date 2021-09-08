@@ -51,6 +51,5 @@ img {
   border-radius: 6%;
   border: none;
   padding: 6px 12px;
-  display: flex;
-  justify-content: flex-end;
+  float: right;
 }
