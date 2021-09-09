@@ -7,12 +7,19 @@ var data = {
   nextEntryId: 1
 };
 
+JSON.parse(localStorage.getItem('data'));
+
+window.addEventListener('beforeunload', function (event) {
+  var dataJSON = JSON.stringify(data);
+  localStorage.setItem('data', dataJSON);
+});
+
 function logSubmit(event) {
   event.preventDefault();
   var newEntry = {
-    title: document.querySelector('.title'),
-    photoURL: document.querySelector('.photo'),
-    notes: document.querySelector('.notes'),
+    title: form.elements.titleinput.value,
+    photoURL: form.elements.photoinput.value,
+    notes: form.elements.notesinput.value,
     currentEntry: data.nextEntryId
   };
   data.nextEntryId++;
