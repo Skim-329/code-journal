@@ -18,6 +18,9 @@ function logSubmit(event) {
   data.nextEntryId++;
   data.entries.unshift(newEntry);
   document.querySelector('form').reset();
+
+  var imgPreview = document.querySelector('#photo-preview');
+  imgPreview.setAttribute('src', 'images/placeholder-image-square.jpg');
 }
 
 var form = document.querySelector('.entry');
